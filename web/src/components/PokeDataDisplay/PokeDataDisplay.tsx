@@ -20,7 +20,7 @@ const PokeDataDisplay = ({ pokemon, json, offset, limit }) => {
   const [searchPokemonNameValue, setSearchPokemonNameValue] = useState('')
   const [pokeJson, setPokeJson] = useState(json)
 
-  // console.log('top of pokeDataDisplay component', { pokeJson }, { json })
+  console.log('top of pokeDataDisplay component', { pokeJson }, { json })
 
   function concatPokemonInLocalStorage(json) {
     // if (!json) return
