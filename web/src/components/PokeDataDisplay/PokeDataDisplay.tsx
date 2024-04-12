@@ -82,12 +82,22 @@ const PokeDataDisplay = ({ pokemon, json, offset, limit }) => {
       : parsedLimit
 
   //this works, but useEffect did not!
-  if (JSON.stringify(json) !== JSON.stringify(pokeJson)) setPokeJson(json)
+  if (
+    JSON.stringify(json) !== JSON.stringify(pokeJson) &&
+    !searchPokemonNameValue
+  )
+    setPokeJson(json)
 
-  useEffect(() => {
-    console.log('try to setPokeJson on page load in useEffect not working')
-    setPokeJson(JSON.parse(JSON.stringify(json)))
-  }, [])
+  // useEffect(() => {
+  //   console.log({ pokeJson })
+  // }, [pokeJson])
+
+  // useEffect(() => {
+  //   console.log('try to setPokeJson on page load in useEffect not working')
+  //   if (!pokeJson) {
+  //     setPokeJson(JSON.parse(JSON.stringify(json)))
+  //   }
+  // }, [])
 
   useEffect(() => {
     if (searchPokemonNameValue) {
@@ -135,6 +145,7 @@ const PokeDataDisplay = ({ pokemon, json, offset, limit }) => {
           {json.previous ? (
             <button
               onClick={() => {
+                setSearchPokemonNameValue('')
                 if (typeof offset !== 'string') {
                   const newOffset = offset + limit
                   navigate(routes.homeOffset({ offset: newOffset }), {
@@ -155,6 +166,7 @@ const PokeDataDisplay = ({ pokemon, json, offset, limit }) => {
           {json.next ? (
             <button
               onClick={() => {
+                setSearchPokemonNameValue('')
                 if (typeof offset !== 'string') {
                   const newOffset = offset + limit
                   navigate(routes.homeOffset({ offset: newOffset }), {
