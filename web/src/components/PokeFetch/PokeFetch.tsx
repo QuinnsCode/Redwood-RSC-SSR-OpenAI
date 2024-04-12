@@ -1,3 +1,5 @@
+import { Suspense } from 'react'
+
 import PokeDataDisplay from '../PokeDataDisplay/PokeDataDisplay'
 
 const PokeFetch = async ({ pokemon, offset, limit }) => {
@@ -21,13 +23,15 @@ const PokeFetch = async ({ pokemon, offset, limit }) => {
       <h2>{'PokeFetch'}</h2>
       <h3>This is a server component.</h3>
       <p>
-        <PokeDataDisplay
-          pokemon={pokemon}
-          offset={offset}
-          limit={limit}
-          json={json}
-          key={json}
-        />
+        <Suspense fallback={<div>LOOOOOOOOADING</div>}>
+          <PokeDataDisplay
+            pokemon={pokemon}
+            offset={offset}
+            limit={limit}
+            json={json}
+            key={json}
+          />
+        </Suspense>
       </p>
     </div>
   )
