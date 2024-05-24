@@ -326,7 +326,7 @@ const PokeDataDisplay = ({ pokemon, json, offset, limit }) => {
                 navigate(routes.homeOffset({ offset: 0 }))
               }}
             >
-              Back to PokeList
+              PokeList
             </button>
           </div>
 
