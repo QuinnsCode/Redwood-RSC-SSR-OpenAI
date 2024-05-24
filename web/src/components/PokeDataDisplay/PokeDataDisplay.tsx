@@ -180,7 +180,7 @@ const PokeDataDisplay = ({ pokemon, json, offset, limit }) => {
       >
         <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
       </Metadata> */}
-      <h3>{'PokeDataDisplay'}</h3>
+      <h3>{'PokeDataDisplays'}</h3>
       <h4>PokeDataDisplay client component</h4>
       <p>
         {`Buttons can be loaded in server components but their onClick events are DOM based and thus cannot until 'use client'`}
