@@ -165,7 +165,7 @@ const PokeDataDisplay = ({ pokemon, json, offset, limit }) => {
 
   return (
     <div style={{ border: '3px blue dashed', margin: '1em', padding: '1em' }}>
-      <Metadata
+      {/* <Metadata
         title={pokemon ? pokemon + ' Page' : 'Pokemon Data Page'}
         description="Displaying Redwood RSC Powered Pokemon Data"
         og={{
@@ -179,7 +179,7 @@ const PokeDataDisplay = ({ pokemon, json, offset, limit }) => {
         robots="nofollow"
       >
         <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
-      </Metadata>
+      </Metadata> */}
       <h3>{'PokeDataDisplay'}</h3>
       <h4>PokeDataDisplay client component</h4>
       <p>

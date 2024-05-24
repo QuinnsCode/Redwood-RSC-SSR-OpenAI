@@ -19,8 +19,8 @@ const Routes = () => {
         <Route path="/" page={HomePage} name="home" />
         <Route path="/openai" page={OpenAiPage} name="openAi" />
         <Route path="/about" page={AboutPage} name="about" />
-        <Route path="/{pokemon:String}" page={HomePage} name="homePokemon" />
         <Route path="/?offset={offset:Int}" page={HomePage} name="homeOffset" />
+        <Route path="/{pokemon:String}" page={HomePage} name="homePokemon" />
       </Set>
       <Route notfound page={NotFoundPage} />
     </Router>
