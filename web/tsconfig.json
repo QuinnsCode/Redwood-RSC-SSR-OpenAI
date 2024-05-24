@@ -39,7 +39,8 @@
     "types": [
       "jest",
       "jest-dom",
-      "react/experimental"
+      "react/experimental",
+      "node"
     ],
     "jsx": "preserve"
   },

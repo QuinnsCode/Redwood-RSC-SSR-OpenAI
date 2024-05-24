@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "@apollo/experimental-nextjs-app-support": "0.0.0-commit-b8a73fe",
+    "@copilotkit/react-core": "^0.24.0",
+    "@copilotkit/react-ui": "^0.21.0",
     "@redwoodjs/forms": "8.0.0-canary.455",
     "@redwoodjs/router": "8.0.0-canary.455",
     "@redwoodjs/web": "8.0.0-canary.455",

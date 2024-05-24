@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 
 import { navigate, routes } from '@redwoodjs/router'
+import { Metadata } from '@redwoodjs/web'
 
 const PokeDataDisplay = ({ pokemon, json, offset, limit }) => {
   const POKEMON_NAME_INPUT = 'pokemon-name-input'
@@ -149,6 +150,8 @@ const PokeDataDisplay = ({ pokemon, json, offset, limit }) => {
   //   }
   // }, [])
 
+  const [sizeOfTheFont, setSizeOfTheFont] = useState<number>(7)
+
   useEffect(() => {
     if (searchPokemonNameValue) {
       const newResults = json?.results?.filter((val) => {
@@ -162,31 +165,67 @@ const PokeDataDisplay = ({ pokemon, json, offset, limit }) => {
 
   return (
     <div style={{ border: '3px blue dashed', margin: '1em', padding: '1em' }}>
+      <Metadata
+        title={pokemon ? pokemon + ' Page' : 'Pokemon Data Page'}
+        description="Displaying Redwood RSC Powered Pokemon Data"
+        og={{
+          image: json
+            ? json?.sprites?.front_default
+            : 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png',
+          url: pokemon
+            ? `https://redwood-rsc-pokemon.vercel.app/${pokemon}`
+            : 'https://redwood-rsc-pokemon.vercel.app',
+        }}
+        robots="nofollow"
+      >
+        <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
+      </Metadata>
       <h3>{'PokeDataDisplay'}</h3>
-      <h4>This is a client component. We need to have interactive buttons</h4>
+      <h4>PokeDataDisplay client component</h4>
       <p>
-        Buttons will work but their onClick events are DOM based and thus cannot
-        be used in server components
+        {`Buttons can be loaded in server components but their onClick events are DOM based and thus cannot until 'use client'`}
       </p>
-      {JSON.stringify(json) === JSON.stringify(pokeJson) ? (
+
+      <hr />
+      {sizeOfTheFont !== 7 ? (
         <button
-          style={{ color: 'green' }}
+          style={{ color: 'purple' }}
           onClick={() => {
-            setPokeJson(json)
+            setSizeOfTheFont(7)
           }}
         >
-          Click to setPokeJson useState
+          Set fontSize to 7
         </button>
       ) : (
+        <></>
+      )}
+      {'  '}
+      {sizeOfTheFont !== 12 ? (
         <button
-          style={{ color: 'red' }}
+          style={{ color: 'purple' }}
           onClick={() => {
-            setPokeJson(json)
+            setSizeOfTheFont(12)
           }}
         >
-          Click to setPokeJson useState
+          Set fontSize to 12
         </button>
+      ) : (
+        <></>
       )}
+      {'  '}
+      {sizeOfTheFont !== 20 ? (
+        <button
+          style={{ color: 'purple' }}
+          onClick={() => {
+            setSizeOfTheFont(20)
+          }}
+        >
+          Set fontSize to 20
+        </button>
+      ) : (
+        <></>
+      )}
+      <hr />
 
       {/* If we don't have a pokemon we have the list of many pokemon */}
       {!pokemon ? (
@@ -290,7 +329,26 @@ const PokeDataDisplay = ({ pokemon, json, offset, limit }) => {
               Back to PokeList
             </button>
           </div>
-          <div>{displayJSON(json)}</div>
+
+          {/* {<div>
+            <button
+              onClick={() => {
+                navigate(routes.homeOffset({ offset: 0 }))
+              }}
+            >
+              Back to PokeList
+            </button>
+          </div>}
+          {<div>
+            <button
+              onClick={() => {
+                navigate(routes.homeOffset({ offset: 0 }))
+              }}
+            >
+              Back to PokeList
+            </button>
+          </div>} */}
+          <div style={{ fontSize: sizeOfTheFont }}>{displayJSON(json)}</div>
         </div>
       ) : null}
     </div>

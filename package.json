@@ -20,5 +20,11 @@
   "prisma": {
     "seed": "yarn rw exec seed"
   },
-  "packageManager": "yarn@4.1.1"
+  "packageManager": "yarn@4.1.1",
+  "dependencies": {
+    "@copilotkit/backend": "^0.8.0",
+    "@copilotkit/react-core": "^0.24.0",
+    "@copilotkit/react-ui": "^0.21.0",
+    "openai": "^4.38.3"
+  }
 }

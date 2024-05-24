@@ -14,14 +14,14 @@ const redwoodAppElement = document.getElementById('redwood-app')
 if (redwoodAppElement.children?.length > 0) {
   hydrateRoot(
     document,
-    <Document css={window.__assetMap?.()?.css}>
+    <Document css={window?.__assetMap?.()?.css}>
       <App />
     </Document>
   )
 } else {
   const root = createRoot(document)
   root.render(
-    <Document css={window.__assetMap?.()?.css}>
+    <Document css={window?.__assetMap?.()?.css}>
       <App />
     </Document>
   )

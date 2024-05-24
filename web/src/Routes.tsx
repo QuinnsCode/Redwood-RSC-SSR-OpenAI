@@ -9,17 +9,18 @@
 
 import { Router, Route, Set } from '@redwoodjs/router'
 
-import NavigationLayout from 'src/layouts/NavigationLayout/NavigationLayout'
-import NotFoundPage from 'src/pages/NotFoundPage/NotFoundPage'
+import NavigationLayout from './layouts/NavigationLayout/NavigationLayout'
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage'
 
 const Routes = () => {
   return (
     <Router>
       <Set wrap={NavigationLayout}>
         <Route path="/" page={HomePage} name="home" />
+        <Route path="/openai" page={OpenAiPage} name="openAi" />
+        <Route path="/about" page={AboutPage} name="about" />
         <Route path="/{pokemon:String}" page={HomePage} name="homePokemon" />
         <Route path="/?offset={offset:Int}" page={HomePage} name="homeOffset" />
-        <Route path="/about" page={AboutPage} name="about" />
       </Set>
       <Route notfound page={NotFoundPage} />
     </Router>
