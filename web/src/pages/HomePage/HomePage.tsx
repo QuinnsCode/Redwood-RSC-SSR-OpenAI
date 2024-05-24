@@ -20,6 +20,7 @@ const HomePage = ({ name = 'Anonymous', pokemon, offset, limit }) => {
 
         {/* <h1 className={styles.title}>Hello {name}!!</h1> */}
         <h3>Home Page server component.</h3>
+        <hr />
         <Suspense fallback={<div>Loading pokemons...</div>}>
           <PokeFetch
             pokemon={pokemon}
