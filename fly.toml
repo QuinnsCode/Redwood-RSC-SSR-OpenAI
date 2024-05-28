@@ -2,8 +2,8 @@
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 
-app = "badge-app-staging"
-primary_region = "iad"
+app = "rsc-app"
+primary_region = "lax"
 
 [build]
   build-target = "api_fe_serve"
