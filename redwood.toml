@@ -5,7 +5,7 @@
 # For the full list of options, see the "App Configuration: redwood.toml" doc:
 # https://redwoodjs.com/docs/app-configuration-redwood-toml
 
-# local
+# local & flyio
 # apiUrl = "/.redwood/functions"
 # vercel
 # apiUrl = "/api"
@@ -13,7 +13,7 @@
 [web]
   title = "Redwood App"
   port = 8910
-  apiUrl = "/api"
+  apiUrl = "/.redwood/functions"
   includeEnvironmentVariables = [
     "OPENAI_API_KEY"
     # Add any ENV vars that should be available to the web side to this array
