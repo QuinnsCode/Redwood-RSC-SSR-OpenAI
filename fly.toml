@@ -6,8 +6,6 @@
 app = 'rsc-app'
 primary_region = 'lax'
 
-[build]
-  build-target = "api_fe_serve"
 
 [deploy]
   release_command = '.fly/release.sh'
