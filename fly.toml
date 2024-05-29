@@ -7,27 +7,49 @@ app = 'rsc-app'
 primary_region = 'lax'
 
 [build]
+  [build.args]
+    NODE_VERSION = "20"
 
 [deploy]
   release_command = '.fly/release.sh'
 
 [env]
-  DATABASE_URL = 'file://data/sqlite.db'
+  #DATABASE_URL = 'file://data/sqlite.db'
   MIGRATE_ON_BOOT = 'true'
-  PORT = '8910'
+  #PORT = '8910'
   REDWOOD_DISABLE_TELEMETRY = '1'
 
-[[mounts]]
-  source = 'data'
-  destination = '/data'
+# [[mounts]]
+#  source = 'data'
+#  destination = '/data'
 
-[http_service]
+#[http_service]
+  #internal_port = 8910
+  #force_https = true
+  #auto_stop_machines = true
+  #auto_start_machines = true
+  #min_machines_running = 0
+  #processes = ['app']
+
+[[services]]
+  http_checks = []
   internal_port = 8910
-  force_https = true
-  auto_stop_machines = true
-  auto_start_machines = true
-  min_machines_running = 0
-  processes = ['app']
+  processes = ["app"]
+  protocol = "tcp"
+  [[services.ports]]
+    handlers = ["http"]
+    port = "80"
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = "443"
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+  [[services.tcp_checks]]
+    grace_period = "1s"
+    interval = "15s"
+    restart_limit = 6
+    timeout = "2s"
 
 [[vm]]
   memory = '1gb'
