@@ -27,16 +27,16 @@ services:
     environment:
       - API_PROXY_TARGET=http://api:8911
 
-  db:
-    image: postgres:16-bookworm
-    environment:
-      POSTGRES_USER: redwood
-      POSTGRES_PASSWORD: redwood
-      POSTGRES_DB: redwood
-    ports:
-      - "5432:5432"
-    volumes:
-      - ./postgres:/var/lib/postgresql/data
+  # db:
+  #   image: postgres:16-bookworm
+  #   environment:
+  #     POSTGRES_USER: redwood
+  #     POSTGRES_PASSWORD: redwood
+  #     POSTGRES_DB: redwood
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - ./postgres:/var/lib/postgresql/data
 
   # After starting with `docker compose -f ./docker-compose.prod.yml up`,
   # use the console to run commands in the container:
