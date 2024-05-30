@@ -15,7 +15,7 @@ primary_region = 'lax'
 
 [env]
   MIGRATE_ON_BOOT = 'true'
-  #PORT = '8910'
+  PORT = "8910"
   REDWOOD_DISABLE_TELEMETRY = '1'
 
 [[services]]
