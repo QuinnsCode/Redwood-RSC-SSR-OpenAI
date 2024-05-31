@@ -11,9 +11,9 @@ services:
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgresql://redwood:redwood@db:5432/redwood
-      - TEST_DATABASE_URL=postgresql://redwood:redwood@db:5432/redwood_test
-      - SESSION_SECRET=super_secret_session_key_change_me_in_production_please
+      - DATABASE_URL=file://data/sqlite.db
+      - TEST_DATABASE_URL=file://data/sqlite.db
+      - SESSION_SECRET=9Svo/qMeEr/xn69l/SLD2mtB0z737dWpjRnMm9r/NQY=
 
   web:
     build:
@@ -54,7 +54,7 @@ services:
       - /tmp
     command: "true"
     environment:
-      - DATABASE_URL=postgresql://redwood:redwood@db:5432/redwood
-      - TEST_DATABASE_URL=postgresql://redwood:redwood@db:5432/redwood_test
+      - DATABASE_URL=file://data/sqlite.db
+      - TEST_DATABASE_URL=file://data/sqlite.db
     depends_on:
       - db

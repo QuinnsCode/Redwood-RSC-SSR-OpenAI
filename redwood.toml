@@ -23,6 +23,7 @@
   port = 8911
 [browser]
   open = false
+
 [notifications]
   versionUpdates = ["latest"]
 

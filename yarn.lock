@@ -4949,7 +4949,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/api-server@npm:8.0.0-canary.672":
+"@redwoodjs/api-server@npm:8.0.0-canary.672, @redwoodjs/api-server@npm:8.0.0-canary.672+ab8ce65f1":
   version: 8.0.0-canary.672
   resolution: "@redwoodjs/api-server@npm:8.0.0-canary.672"
   dependencies:
@@ -7687,7 +7687,7 @@ __metadata:
   dependencies:
     "@copilotkit/backend": "npm:^0.8.0"
     "@redwoodjs/api": "npm:8.0.0-canary.455"
-    "@redwoodjs/api-server": "npm:8.0.0-canary.672"
+    "@redwoodjs/api-server": "npm:8.0.0-canary.672+ab8ce65f1"
     "@redwoodjs/graphql-server": "npm:8.0.0-canary.455"
   languageName: unknown
   linkType: soft
