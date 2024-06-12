@@ -14,7 +14,7 @@ const OpenAiPage = () => {
     <div className="open-ai-page">
       <div>
         {promptStringTest}
-        {`: \n\n`}
+        {`: \n\n\n`}
       </div>
       <Suspense fallback={<div>{`Loading AI...`}</div>}>
         <OpenAiTest promptString={promptStringTest} />
