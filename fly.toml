@@ -12,14 +12,16 @@ primary_region = 'lax'
   release_command = '.fly/release.sh'
 
 [env]
-  DATABASE_URL = 'file://data/sqlite.db'
+  DATABASE_URL='file:./dev.db'
   MIGRATE_ON_BOOT = 'true'
   PORT = '8910'
   REDWOOD_DISABLE_TELEMETRY = '1'
+  NODE_ENV = "production"
+  API_PROXY_TARGET = "http://api:8911"
 
-# [[mounts]]
-#   source = 'data'
-#   destination = '/data'
+[mounts]
+  source = 'data'
+  destination = '/data'
 
 [[vm]]
   memory = '1gb'
